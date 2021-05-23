@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+</head>
+<body>
+<h1>Record Archive</h1>
+<ul>
+  <? for(var i = 0; i < list.length; i++) { ?>
+    <li> <?= list[i].category ?>
+       <ul>
+        <? for(var j = 0; j < list[i].events.length; j++) { ?>
+          <li > 
+            <a href="<?= ScriptApp.getService().getUrl() ?>?folder_id=<?= list[i].events[j].folder_id ?>"> <?= list[i].events[j].name ?> </a>
+          </li>
+        <? } ?>
+      </ul>
+    </li>
+  <? } ?>
+</ul>
+</body>
+</html>
